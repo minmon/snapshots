@@ -1,0 +1,596 @@
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500,600");
+
+*
+{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font: 100%;
+  font-size: inherit;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container
+{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.page-side
+{
+  position: fixed;
+  width: 54.4px;
+  height: 100%;
+  font-family: FontAwesome;
+  font-size: 25px;
+  background-color: #0D1217;
+  z-index: 1002;
+}
+
+.page-side a
+{
+  display: block;
+  text-decoration: none;
+  padding: 10px 14.7px;
+  color: rgba(255, 255, 255, 0.5);
+  outline: 0;
+}
+
+.page-side a:hover
+{
+  color: white;
+}
+
+.page-side a.active
+{
+  color: #19B5FE;
+}
+
+.page-space
+{
+  min-width: 54.4px;
+}
+
+.page-box
+{
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.page-box .title
+{
+  display: none; /** display: block; **/
+  text-align: right;
+  font-family: Arial;
+  font-size: 0.85em;
+  font-weight: 300;
+  color: #22313F;
+  padding: 1.15em 3.5em;
+  background: #e6e6e6;
+}
+
+.page-box .page-head
+{
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+  text-align: center;
+  padding: 8em 0 6em 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.65);
+}
+
+.page-box .page-head .inner
+{
+  flex-direction: column;
+  height: auto;
+  font-family: Arial;
+  font-size: 92.5%;
+  color: #FFF;
+  padding: 0 0 0 0;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+}
+
+.page-box .page-body
+{
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+}
+
+.page-box .page-head .inner h1
+{
+  margin: 0 0 0.5em 0;
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+.page-box .page-head .inner p
+{
+  margin: 0 0 2em 0;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.page-box .page-head .inner .button
+{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.35em;
+  font-weight: bold;
+  padding: 0.95em 2em;
+  border: 1.5pt solid #5C5B5C;
+  border-radius: 5px;
+  background-color: rgb(91,92,91);
+  background-color: rgba(91,92,91,0);
+  transition: background-color 0.1s ease-out;
+  -webkit-transition: background-color 0.1s ease-out;
+  -moz-transition: background-color 0.1s ease-out;
+}
+
+.page-box .page-head .inner .button:hover
+{
+  background-color: rgb(91,92,91);
+  background-color: rgba(91,92,91,0.3);
+  transition: background-color 0.1s ease-in;
+  -webkit-transition: background-color 0.1s ease-in;
+  -moz-transition: background-color 0.1s ease-in;
+}
+
+.gallery
+{
+  text-align: center;
+  padding: 3.5em;
+  min-height: 37em;
+}
+
+.gallery h2
+{
+  text-align: center;
+  margin: 0 0 1.5em 0;
+  font-size: 1.5em;
+  color: #22313F;
+}
+
+.gallery .frame
+{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 3.5em 0;
+  min-height: 40em;
+  overflow: hidden;
+}
+
+.gallery .frame .photo
+{
+  cursor: pointer;
+  -webkit-filter: contrast(110%);
+  filter: contrast(110%);
+  width: 25%;
+  height: 20em;
+  transform: scaleX(1.1);
+  -webkit-transform: scaleX(1.1);
+  -moz-transform: scaleX(1.1);
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+}
+
+.gallery .frame .overflow
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.gallery .frame .photo:hover
+{
+  transform: scale(1.15);
+  -webkit-transform: scale(1.15,1.15);
+  -moz-transform: scale(1.15,1.15);
+  transition: transform 0.1s ease-in;
+  -webkit-transition: -webkit-transform 0.1s ease-in;
+  -moz-transition: -moz-transform 0.1s ease-in;
+}
+
+.gallery .button
+{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.35em;
+  font-weight: bold;
+  color: #FFF;
+  padding: 0.5em 2em;
+  background-color: #19B5FE;
+  border-radius: 4px;
+}
+
+
+.generic
+{
+  display: none; /** display: flex; **/
+  flex-direction: column;
+  text-align: left;
+  padding: 3.5em;
+  min-height: 37em;
+  background: #f2f2f2;
+}
+
+.generic h1
+{
+  margin: 0 0 1em 0;
+  font-family: 'Nunito Sans',Arial;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #22313F;
+}
+
+.generic p
+{
+  text-align: justify;
+  margin: 0 0 3em 0;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  line-height: 2em;
+}
+
+.generic .profile
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.generic .profile .frame
+{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.generic .profile .frame .photo
+{
+  flex: 1;
+  min-height: 3em;
+  margin: 0 1em 1em 0;
+  padding: 1em;
+  border: 0.1em solid #e2e2e2;
+}
+
+.generic .profile .frame .photo img
+{
+  width: 100%;
+  height: 100%;
+}
+
+.generic .profile .frame .status
+{
+  flex: 3.50;
+  display: flex;
+  flex-direction: column;
+}
+
+.generic .profile .frame .status h3
+{
+  margin: 0 0 1em 0;
+  font-family: 'Nunito Sans',Arial;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #22313F;
+}
+
+.generic .profile .frame .status p
+{
+  text-align: left;
+  margin: 0 0 1em 0;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  line-height: 2em;
+}
+
+.contact
+{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.aboutme,.intouch
+{
+  display: inline-block;
+  width: 50%;
+  height: auto;
+  padding: 3.5em 0 1.5em 0;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  background-color: #e6e6e6;
+}
+
+.aboutme h3,.intouch h3
+{
+  text-align: left;
+  margin: 0 0 1em 0;
+  font-size: 1.2em;
+  font-weight: lighter;
+  color: #22313F;
+}
+
+.aboutme p
+{
+  text-align: justify;
+  margin: 0 0 2em 0;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+
+.aboutme a
+{
+  text-decoration: none;
+  font-family: FontAwesome;
+  font-size: 2em;
+  color: #19B5FE;
+  padding-right: 0.5em;
+}
+
+.aboutme a:hover
+{
+  color: #19A5FE;
+  outline: 0;
+}
+
+.intouch
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #ECECEC;
+}
+
+.intouch .content
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.intouch .content[id="content"]
+{
+  margin: 0 0 1.5em 0;
+}
+
+.intouch .content label
+{
+  display: inline-block;
+  width: 48%;
+  margin: 0 0 1em 0;
+  font-family: Arial;
+  font-size: 0.75em;
+}
+
+.intouch .content .name,.intouch .content .email,.intouch .content .message
+{
+  width: 48%;
+  font-family: sans-serif;
+  font-size: 0.85em;
+  font-weight: lighter;
+  padding: 0.5em 1em;
+  background-color: #FFF;
+  border-radius: 4px;
+}
+
+.intouch .content .name,.intouch .content .email
+{
+  margin: 0 0 2em 0;
+}
+
+.intouch .content .message
+{
+  width: 100%;
+  height: 10em;
+}
+
+[contenteditable="true"]:empty:not(:focus):before
+{
+  content: attr(data-placeholder);
+  font-size: 0.80em;
+  opacity: 0.5;
+}
+
+.intouch .content .button
+{
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.80em;
+  color: #FFF;
+  padding: 0.65em 1.5em;
+  background-color: #19B5FE;
+  border-radius: 4px;
+}
+
+.intouch .content .button:hover,.gallery .button:hover
+{
+  background-color: #019BE3;
+}
+
+.copyright
+{
+  padding: 4em 0 2em 0;
+  background-color: #f2f2f2;
+}
+
+.copyright .content
+{
+  color: #bfbfbf;
+  font-size: 0.9em;
+  margin: 0 0 2em 0;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.copyright .content a
+{
+  text-decoration: none;
+  color: #19B5FE;
+}
+
+@media screen and (max-width: 736px)
+{
+  .page-box
+  {
+    background-position: -45px top;
+    background-size: 150% 75%;
+  }
+  .page-box .title
+  {
+    text-align: center;
+  }
+  .page-box .page-head
+  {
+    padding: 0;
+  }
+  .page-box .page-head .inner
+  {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    padding-left: 0.50em;
+    padding-right: 0.50em;
+  }
+  .page-box .page-head .inner h1
+  {
+    font-size: 2.5em;
+    font-weight: 300;
+  }
+  .page-box .page-head .inner p
+  {
+    margin: 0 0 1.75em 0;
+    font-family: sans-serif;
+    font-size: 1.20em;
+    font-weight: lighter;
+    line-height: 1.65em;
+    padding: 0 2.5em 0 2.5em;
+  }
+  .page-box .page-head .inner .button
+  {
+    padding: 0.95em 3em;
+  }
+  .gallery
+  {
+    padding: 1em;
+  }
+  .gallery h2
+  {
+    text-align: left;
+    margin: 0 0 0.5em 0;
+    font-family: sans-serif;
+    font-size: 1.25em;
+    font-weight: 400;
+  }
+  .gallery .frame
+  {
+    min-height: 120em;
+  }
+  .gallery .frame .photo
+  {
+    -webkit-filter: none;
+    filter: none;
+    width: 100%;
+    height: 15em;
+  }
+  .generic
+  {
+    padding: 1em;
+  }
+  .generic .profile
+  {
+    flex-direction: column;
+  }
+  .generic .profile .frame
+  {
+    flex-direction: column;
+    width: 100%;
+  }
+  .generic .profile .frame .photo
+  {
+    flex: none;
+    margin: 0 1em 1em 0;
+    padding: 1em;
+  }
+  .generic .profile .frame .status
+  {
+    flex: none;
+  }
+  .generic .profile .frame .status p
+  {
+    text-align: justify;
+  }
+  .aboutme,.intouch
+  {
+    width: 100%;
+    padding: 1em 0 0.5em 0;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .intouch .content
+  {
+    flex-direction: column;
+  }
+  .intouch .content #label_name
+  {
+    order: 1;
+  }
+  .intouch .content #label_email
+  {
+    order: 3;
+  }
+  .intouch .content #text_name
+  {
+    order: 2;
+  }
+  .intouch .content #text_email
+  {
+    order: 4;
+  }
+  .intouch .content .name,.intouch .content .email,.intouch .content .message
+  {
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 0.85em;
+    font-weight: lighter;
+    padding: 0.5em 1em;
+    background-color: #FFF;
+    border-radius: 4px;
+  }
+}
+
+@media screen and (max-height: 320px) and (max-width: 736px) and (orientation: landscape)
+{
+  .page-box .page-head .inner h1
+  {
+    font-size: 2em;
+  }
+  .page-box .page-head .inner p
+  {
+    font-size: 1em;
+    padding: 0 0.5em 0 0.5em;
+  }
+}
