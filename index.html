@@ -10,9 +10,9 @@
   <body>
     <div class="container">
       <div class="page-side">
-        <a href="#" id="home" class="icon fa-home active" onfocus='BaseManager.reload();'></a>
-        <a href="#" id="camera" class="icon fa-camera-retro" onfocus='StyleManager.select(this,"home","file");'></a>
-        <a href="#" id="file" class="icon fa-file-text-o" ontouhcstart='StyleManager.select(this,"home","camera");'></a>
+        <a href="#" id="home" class="icon fa-home active"></a>
+        <a href="#" id="camera" class="icon fa-camera-retro"></a>
+        <a href="#" id="file" class="icon fa-file-text-o"></a>
       </div>
       <div class="page-space"></div>
       <div class="page-box">
@@ -162,10 +162,10 @@
       </div>
     </div>
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/min.js">
-      $('#file').on('touchstart',function(){
+    <script src="js/min.js"></script>
+    <script type="text/javascript">
+      $('#file').on('click touchstart',function(){
         StyleManager.select(this,"home","camera");
-        alert(1);
       });
     </script>
   </body>
