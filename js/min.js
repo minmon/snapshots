@@ -42,7 +42,6 @@ var StyleManager = {
 
     if(!select.hasClass("active")) {
       select.addClass("active");
-
       for(var i=1;i<arguments.length;i++) {
         miss = BaseManager.getElement("#"+arguments[i]+"");
         miss.removeClass("active");
