@@ -10,6 +10,7 @@
   font-size: inherit;
   box-sizing: border-box;
   vertical-align: baseline;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .container
@@ -28,6 +29,7 @@
   font-family: FontAwesome;
   font-size: 25px;
   background-color: #0D1217;
+  z-index: 1002;
 }
 
 .page-side a
