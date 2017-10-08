@@ -3,7 +3,7 @@ var BaseManager = {
     document.location.reload(true);
   },
   getElement: function(el) {
-    return $(el);
+    return document.getElementById(el);
   },
   addClass: function(el,name) {
     el.classList.add(name);
@@ -21,7 +21,7 @@ var StyleManager = {
     page_display = function(displays={}) {
       var count=0,display = {0:'title',1:'head',2:'gallery',3:'generic'};
       for (display[count] in displays) {
-        BaseManager.getElement("#"+display[count]+"").css({'display': displays[display[count]]});
+        BaseManager.getElement(display[count]).style.display = displays[display[count]];
         count++;
       }
     };
@@ -38,13 +38,13 @@ var StyleManager = {
         page_display({title: 'block',head: 'none',gallery: 'none',generic: 'flex'});
       }
     };
-    select = BaseManager.getElement("#"+context.id+"");
+    select = BaseManager.getElement(context.id);
 
-    if(!select.hasClass("active")) {
-      select.addClass("active");
+    if('acitve' != select.className) {
+      BaseManager.addClass(select,'active');
       for(var i=1;i<arguments.length;i++) {
-        miss = BaseManager.getElement("#"+arguments[i]+"");
-        miss.removeClass("active");
+        miss = BaseManager.getElement(arguments[i]);
+        BaseManager.removeClass(miss,'active');
       }
       if(argument.hasOwnProperty(context.id)) {
         argument[context.id]();

@@ -10,9 +10,9 @@
   <body>
     <div class="container">
       <div class="page-side">
-        <a href="#" id="home" class="icon fa-home active"></a>
-        <a href="#" id="camera" class="icon fa-camera-retro"></a>
-        <a href="#" id="file" class="icon fa-file-text-o"></a>
+        <a href="#" id="home" class="icon fa-home active" onclick='BaseManager.reload();'></a>
+        <a href="#" id="camera" class="icon fa-camera-retro" onclick='StyleManager.select(this,"home","file");'></a>
+        <a href="#" id="file" class="icon fa-file-text-o" onclick='StyleManager.select(this,"home","camera");'></a>
       </div>
       <div class="page-space"></div>
       <div class="page-box">
@@ -23,7 +23,7 @@
           <div class="inner">
             <h1>Hey, I'm Snapshot</h1>
             <p>A fully responsive gallery template by TEMPLATED</p>
-            <div class="button" onclick="StyleManager.scroll('#body');">Continue</div>
+            <div class="button" onclick="StyleManager.scroll('body');">Continue</div>
           </div>
         </div>
         <div id="body" class="page-body">
@@ -161,12 +161,6 @@
         </div>
       </div>
     </div>
-    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/min.js"></script>
-    <script type="text/javascript">
-      $('#file').on('click touchstart',function(){
-        StyleManager.select(this,"home","camera");
-      });
-    </script>
   </body>
 </html>
