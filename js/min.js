@@ -6,10 +6,14 @@ var BaseManager = {
     return document.getElementById(el);
   },
   addClass: function(el,name) {
-    el.classList.add(name);
+    var class_name = el.className.concat(' '+name);
+    el.setAttribute('class',class_name);
+    console.log(class_name);
   },
   removeClass: function(el,name) {
-    el.classList.remove(name);
+    var class_name = el.className.replace('active','');
+    el.setAttribute('class',class_name);
+    console.log(class_name);
   }
 };
 
