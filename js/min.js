@@ -145,12 +145,3 @@ window.addEventListener("resize",function(){
   ResponsiveManager.init();
 });
 **/
-
-var ready = setInterval(function(){
-  if(document.readyState === 'complete') {
-    clearInterval(ready);
-    document.body.style.visibility = 'visible';
-  }else{
-    BaseManager.reload();
-  }
-},8000);

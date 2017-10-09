@@ -9,12 +9,12 @@
  */
 
 .animated {
-  animation-duration: 10s;
+  animation-duration: 5s;
   animation-fill-mode: both;
 }
 
 .delay {
-  animation-delay: 0.1s;
+  animation-delay: .75s;
 }
 
 .animated.infinite {

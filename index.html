@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/animate.css" media="screen" title="no title">
   </head>
   <body>
-    <a href="#facebook" id="author" onmouseover="startProfile(event);" onmouseleave="endProfile(event);" draggable="true" class="author"></a>
     <div class="container">
       <div class="page-side">
         <a href="#_" id="home" class="icon fa-home active" onclick='StyleManager.select(this,"camera","file");'></a>
@@ -21,8 +20,8 @@
           <span>Snapshot by TEMPLATED</span>
         </div>
         <div id="head" class="page-head">
-          <div class="inner">
-            <h1 class="animated delay jello">Hey, I'm Snapshot</h1>
+          <div class="inner animated delay bounceOut">
+            <h1>Hey, I'm Snapshot</h1>
             <p>A fully responsive gallery template by TEMPLATED</p>
             <div class="button" onclick="StyleManager.scroll('#body');">Continue</div>
           </div>
@@ -181,18 +180,6 @@
       BaseManager.getElement('home').addEventListener('click',function(){
         BaseManager.reload();
       });
-      function startProfile(drag) {
-        drag.target.addEventListener('mouseover',function(event){
-          window.addEventListener('mousemove',function(event){
-            drag.target.style.top = ""+event.clientY-25+"px";
-            drag.target.style.left = ""+event.clientX-25+"px";
-          });
-        });
-      }
-      function endProfile(drag) {
-          drag.target.style.right = "1em";
-          drag.target.style.bottom = "1em";
-      }
     </script>
   </body>
 </html>
