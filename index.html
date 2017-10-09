@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/animate.css" media="screen" title="no title">
   </head>
   <body>
-    <a href="#facebook" id="author" onmouseover="startProfile(event);" onclick="endProfile(event);" draggable="true" class="author"></a>
+    <a href="#facebook" id="author" ondragstart="startProfile(event);" ondragend="endProfile(event);" onclick="endProfile(event);" draggable="true" class="author"></a>
     <div class="container">
       <div class="page-side">
         <a href="#_" id="home" class="icon fa-home active" onclick='StyleManager.select(this,"camera","file");'></a>
@@ -182,9 +182,11 @@
         BaseManager.reload();
       });
       function startProfile(drag) {
-        drag.target.addEventListener('mousemove',function(event){
-          drag.target.style.top = ""+event.clientY-25+"px";
-          drag.target.style.left = ""+event.clientX-25+"px";
+        drag.target.addEventListener('drag',function(event){
+          window.addEventListener('mousemove',function(event){
+            drag.target.style.top = ""+event.clientY-25+"px";
+            drag.target.style.left = ""+event.clientX-25+"px";
+          });
         });
       }
       function endProfile(drag) {
