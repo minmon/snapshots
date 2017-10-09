@@ -65,6 +65,18 @@ var StyleManager = {
           generic: 'flex',
           'full-gallery': 'none'
         });
+      },
+      all: function() {
+
+      },
+      people: function() {
+
+      },
+      places: function() {
+
+      },
+      things: function() {
+
       }
     };
     select = BaseManager.getElement(context.id);
@@ -133,3 +145,12 @@ window.addEventListener("resize",function(){
   ResponsiveManager.init();
 });
 **/
+
+var ready = setInterval(function(){
+  if(document.readyState === 'complete') {
+    clearInterval(ready);
+    document.body.style.visibility = 'visible';
+  }else{
+    BaseManager.reload();
+  }
+},100);

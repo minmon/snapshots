@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="css/animate.css" media="screen" title="no title">
   </head>
   <body>
+    <a href="#facebook" id="author" onmouseover="startProfile(event);" onclick="endProfile(event);" draggable="true" class="author"></a>
     <div class="container">
       <div class="page-side">
-        <a href="#home" id="home" class="icon fa-home active" onclick='StyleManager.select(this,"camera","file");'></a>
-        <a href="#gallery" id="camera" class="icon fa-camera-retro" onclick='StyleManager.select(this,"home","file");'></a>
-        <a href="#contacts" id="file" class="icon fa-file-text-o" onclick='StyleManager.select(this,"home","camera");'></a>
+        <a href="#_" id="home" class="icon fa-home active" onclick='StyleManager.select(this,"camera","file");'></a>
+        <a href="#_" id="camera" class="icon fa-camera-retro" onclick='StyleManager.select(this,"home","file");'></a>
+        <a href="#_" id="file" class="icon fa-file-text-o" onclick='StyleManager.select(this,"home","camera");'></a>
       </div>
       <div class="page-space"></div>
       <div class="page-box">
@@ -21,7 +22,7 @@
         </div>
         <div id="head" class="page-head">
           <div class="inner">
-            <h1>Hey, I'm Snapshot</h1>
+            <h1 class="animated delay jello">Hey, I'm Snapshot</h1>
             <p>A fully responsive gallery template by TEMPLATED</p>
             <div class="button" onclick="StyleManager.scroll('#body');">Continue</div>
           </div>
@@ -32,10 +33,10 @@
             <div id="full-header" class="full-header">
               <h1>Gallery</h1>
               <div class="header-buttons">
-                <a href="#" id="all" class="active">All</a>
-                <a href="#" id="people">People</a>
-                <a href="#" id="places">Places</a>
-                <a href="#" id="things">Things</a>
+                <a href="#" id="all" class="active" onclick='StyleManager.select(this,"people","places","things");'>All</a>
+                <a href="#" id="people" onclick='StyleManager.select(this,"all","places","things");'>People</a>
+                <a href="#" id="places" onclick='StyleManager.select(this,"all","people","things");'>Places</a>
+                <a href="#" id="things" onclick='StyleManager.select(this,"all","people","places");'>Things</a>
               </div>
             </div>
             <div class="frame">
@@ -144,7 +145,7 @@
               </p>
               <h3>Follow Me</h3>
               <a href="#" class="icon fa-twitter"></a>
-              <a href="#" class="icon fa-facebook"></a>
+              <a href="#" id="facebook" class="icon fa-facebook"></a>
               <a href="#" class="icon fa-instagram"></a>
             </div>
             <div class="intouch">
@@ -169,8 +170,7 @@
           <div class="copyright">
             <div class="content">
               © Untitled Design:
-               <a href="#">TEMPLATED.</a> Images:
-               <a href="#">Unsplash.</a>
+               <a href="#">TEMPLATED.</a> Images:<a href="#">Unsplash.</a>
             </div>
           </div>
         </div>
@@ -181,6 +181,16 @@
       BaseManager.getElement('home').addEventListener('click',function(){
         BaseManager.reload();
       });
+      function startProfile(drag) {
+        drag.target.addEventListener('mousemove',function(event){
+          drag.target.style.top = ""+event.clientY-25+"px";
+          drag.target.style.left = ""+event.clientX-25+"px";
+        });
+      }
+      function endProfile(drag) {
+          drag.target.style.right = "1em";
+          drag.target.style.bottom = "1em";
+      }
     </script>
   </body>
 </html>

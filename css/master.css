@@ -1,6 +1,11 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500,600");
 
+body
+{
+  visibility: hidden;
+}
+
 *
 {
   margin: 0;
@@ -11,6 +16,24 @@
   box-sizing: border-box;
   vertical-align: baseline;
   -webkit-tap-highlight-color: transparent;
+}
+
+.author
+{
+  text-decoration: none;
+  cursor: pointer;
+  right: 1em;
+  bottom: 1em;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/profile.jpg");
+  background-color: rgba(0,0,0,0.65);
+  background-position: left top;
+  background-size: cover;
+  border-radius: 5em;
+  z-index: 1003;
+  outline: 0;
 }
 
 .container
