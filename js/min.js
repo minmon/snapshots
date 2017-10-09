@@ -7,20 +7,18 @@ var BaseManager = {
   },
   addClass: function(el,name) {
     var class_name = el.className.concat(' '+name);
-    el.setAttribute('class',class_name);
-    console.log(class_name);
+    el.className = class_name;
   },
   removeClass: function(el,name) {
     var class_name = el.className.replace('active','');
-    el.setAttribute('class',class_name);
-    console.log(class_name);
+    el.className = class_name;
   }
 };
 
 var StyleManager = {
   select: function() {
     var context,argument,arguments = StyleManager.select.arguments;
-    var select,miss,page_display;
+    var class_name,select,miss,page_display;
 
     page_display = function(displays={}) {
       var count=0,display = {0:'title',1:'head',2:'gallery',3:'generic'};
@@ -43,8 +41,9 @@ var StyleManager = {
       }
     };
     select = BaseManager.getElement(context.id);
+    class_name = select.className;
 
-    if('acitve' != select.className) {
+    if(null == class_name.match(/active/)) {
       BaseManager.addClass(select,'active');
       for(var i=1;i<arguments.length;i++) {
         miss = BaseManager.getElement(arguments[i]);
