@@ -153,4 +153,4 @@ var ready = setInterval(function(){
   }else{
     BaseManager.reload();
   }
-},100);
+},5000);
