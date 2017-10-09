@@ -13,15 +13,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.show
-{
-  display: block;
-}
-.hide
-{
-  display: none;
-}
-
 .container
 {
   display: flex;
@@ -215,6 +206,10 @@
   color: #FFF;
 }
 
+.gallery .full-header .header-buttons a.active
+{
+  background-color: #22313F;
+}
 .gallery .full-header .header-buttons a:focus
 {
   background-color: #22313F;
@@ -580,11 +575,13 @@
   .gallery .full-header .header-buttons a
   {
     margin: 0 0 0.5em 0;
+    padding: 1em 0;
     width: 100%;
   }
   .gallery .frame
   {
     min-height: 120em;
+    margin-bottom: 1.5em;
   }
   .gallery .frame .photo
   {
