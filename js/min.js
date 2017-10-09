@@ -10,22 +10,34 @@ var BaseManager = {
     el.className = class_name;
   },
   removeClass: function(el,name) {
-    var class_name = el.className.replace('active','');
+    var class_name = el.className.replace(name,'');
     el.className = class_name;
   }
 };
 
 var StyleManager = {
   select: function() {
-    alert("WORKED!");
     var context,argument,arguments = StyleManager.select.arguments;
     var class_name,select,miss,page_display;
 
     page_display = function(displays={}) {
-      var count=0,display = {0:'title',1:'head',2:'gallery',3:'generic'};
+      var count=0,display = {
+        0:'title',
+        1:'head',
+        2:'gallery',
+        3:'generic',
+        4:'half-header',
+        5:'full-header',
+        6:'full-gallery'
+      };
       for (display[count] in displays) {
         BaseManager.getElement(display[count]).style.display = displays[display[count]];
         count++;
+      }
+      if(displays['gallery'] == "block") {
+        BaseManager.getElement('gallery').style.backgroundColor = "#F1F1F1";
+        BaseManager.getElement('gallery').children[2].style.marginBottom = "0";
+        BaseManager.getElement('full-gallery-button').style.display = 'none';
       }
     };
 
@@ -35,10 +47,24 @@ var StyleManager = {
         page_display();
       },
       camera: function() {
-        page_display();
+        page_display({
+          title: 'block',
+          head: 'none',
+          gallery: 'block',
+          generic: 'none',
+          'half-header': 'none',
+          'full-header': 'flex',
+          'full-gallery': 'flex'
+        });
       },
       file: function() {
-        page_display({title: 'block',head: 'none',gallery: 'none',generic: 'flex'});
+        page_display({
+          title: 'block',
+          head: 'none',
+          gallery: 'none',
+          generic: 'flex',
+          'full-gallery': 'none'
+        });
       }
     };
     select = BaseManager.getElement(context.id);
@@ -78,7 +104,6 @@ var StyleManager = {
     };
 
     var timer = new timer();
-
     var event = function() {
       timer.start();
       setTimeout(function(){

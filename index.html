@@ -28,7 +28,16 @@
         </div>
         <div id="body" class="page-body">
           <div id="gallery" class="gallery">
-            <h2>What's New</h2>
+            <h2 id="half-header">What's New</h2>
+            <div id="full-header" class="full-header">
+              <h1>Gallery</h1>
+              <div class="header-buttons">
+                <a href="#">All</a>
+                <a href="#">People</a>
+                <a href="#">Places</a>
+                <a href="#">Things</a>
+              </div>
+            </div>
             <div class="frame">
               <div class="overflow">
                 <img src="images/fulls/01.jpg" alt="photo" class="photo" />
@@ -42,8 +51,14 @@
                 <img src="images/fulls/03.jpg" alt="photo" class="photo" />
                 <img src="images/fulls/07.jpg" alt="photo" class="photo" />
               </div>
+              <div id="full-gallery" class="overflow">
+                <img src="images/fulls/11.jpg" alt="photo" class="photo" />
+                <img src="images/fulls/04.jpg" alt="photo" class="photo" />
+                <img src="images/fulls/08.jpg" alt="photo" class="photo" />
+                <img src="images/fulls/12.jpg" alt="photo" class="photo" />
+              </div>
             </div>
-            <div class="button">Full Gallery</div>
+            <div id="full-gallery-button" class="button">Full Gallery</div>
           </div>
           <div id="generic" class="generic">
             <h1>Generic</h1>
@@ -133,12 +148,12 @@
               <a href="#" class="icon fa-instagram"></a>
             </div>
             <div class="intouch">
-              <h3>Get in Touch<h3>
+              <h3>Get in Touch</h3>
               <div id="form" class="content">
                 <label id="label_name">Name</label>
                 <label id="label_email">Email</label>
-                <input type="text" id="text_name" class="name" placeholder="Name"></input>
-                <input type="text" id="text_email" class="email" placeholder="Email"></input>
+                <input type="text" id="text_name" class="name" placeholder="Name"/>
+                <input type="text" id="text_email" class="email" placeholder="Email"/>
               </div>
               <div class="content">
                 <label>Message</label>
@@ -161,7 +176,7 @@
         </div>
       </div>
     </div>
-    <<script src="js/min.js"></script>
+    <script src="js/min.js"></script>
     <script type="text/javascript">
       BaseManager.getElement('home').addEventListener('click',function(){
         BaseManager.reload();
