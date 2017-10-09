@@ -17,6 +17,7 @@ var BaseManager = {
 
 var StyleManager = {
   select: function() {
+    alert("WORKED!");
     var context,argument,arguments = StyleManager.select.arguments;
     var class_name,select,miss,page_display;
 
