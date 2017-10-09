@@ -34,7 +34,7 @@
 {
   position: fixed;
   width: 54.4px;
-  height: 100%;
+  min-height: 100%;
   font-family: FontAwesome;
   font-size: 25px;
   background-color: #0D1217;
@@ -213,6 +213,11 @@
   border-radius: 4px;
   padding: 0.65em 1.25em;
   color: #FFF;
+}
+
+.gallery .full-header .header-buttons a:focus
+{
+  background-color: #22313F;
 }
 
 .gallery .frame
