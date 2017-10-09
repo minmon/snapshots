@@ -528,6 +528,11 @@ body
 
 @media screen and (max-width: 736px)
 {
+  .author
+  {
+    width: 65px;
+    height: 65px;
+  }
   .page-box
   {
     background-position: -45px top;
